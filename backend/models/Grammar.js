@@ -1,13 +1,10 @@
 const mongoose = require("mongoose");
 
-const grammarSchema = new mongoose.Schema(
-  {
-    structure: { type: String, required: true },
-    meaning: { type: String, required: true },
-    example: { type: String, required: true },
-    level: { type: String, default: "N3" },
-  },
-  { timestamps: true }
-);
+const GrammarSchema = new mongoose.Schema({
+  structure: { type: String, required: true },
+  meaning: { type: String, required: true },
+  example: { type: String, required: true },
+  level: { type: String, required: true },
+});
 
-module.exports = mongoose.model("Grammar", grammarSchema);
+module.exports = mongoose.model("Grammar", GrammarSchema);
